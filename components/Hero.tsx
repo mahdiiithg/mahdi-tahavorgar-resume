@@ -68,12 +68,12 @@ export default function Hero() {
           <StaggeredWord
             word="MAHDI"
             delay={0.35}
-            className="text-[18vw] sm:text-[13vw] lg:text-[10.5rem]"
+            className="text-[15vw] sm:text-[13vw] lg:text-[10.5rem]"
           />
           <StaggeredWord
             word="TAHAVORGAR"
             delay={0.7}
-            className="text-[10.5vw] sm:text-[7.6vw] lg:text-[6.1rem]"
+            className="text-[7.7vw] sm:text-[7.4vw] lg:text-[6.1rem]"
           />
         </h1>
 
@@ -120,15 +120,15 @@ export default function Hero() {
         transition={{ duration: 1.2, delay: 2 }}
         className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between px-6 pb-6 font-mono text-[10px] tracking-[0.25em] text-dim sm:px-10"
       >
-        <div className="space-y-1">
+        <div className="hidden space-y-1 sm:block">
           <p>EXP / 7+ YRS</p>
           <p>SENSORS / 110+</p>
         </div>
-        <div className="flex flex-col items-center gap-2">
+        <div className="mx-auto flex flex-col items-center gap-2 sm:mx-0">
           <span className="inline-block h-8 w-px bg-gradient-to-b from-transparent via-accent to-transparent" />
           <p className="animate-pulse-slow">SCROLL TO DESCEND</p>
         </div>
-        <div className="space-y-1 text-right">
+        <div className="hidden space-y-1 text-right sm:block">
           <p>SPEED / +80%</p>
           <p>MEMORY / −87.5%</p>
         </div>

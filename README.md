@@ -1,37 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mahdi Tahavorgar — Portfolio
 
-## Getting Started
+A cinematic, scroll-driven 3D portfolio for a Senior Front-End Engineer.
+Live target: **https://mahdi-tahavorgar.boppgames.com**
 
-First, run the development server:
+## The concept — "The Descent"
+
+The entire site is a journey through a WebGL particle universe that morphs as you scroll:
+
+1. **Surface** — the hero floats above an undulating ocean of 6,500 particles
+2. **The dive** — particles reform into a tunnel you fly through while career chapters (levels 01–04) pass by
+3. **The core** — at the contact section, particles converge into a breathing wireframe core
+
+Extras: Lenis smooth scrolling, Apple-style word-by-word manifesto reveal, 3D mouse-tilt cards,
+depth gauge scroll indicator (right rail), animated metric counters, skill marquees.
+
+## Stack
+
+- Next.js 14 (App Router, static prerender) + TypeScript
+- Three.js via @react-three/fiber (custom morphing particle system, no drei)
+- Framer Motion (scroll-linked reveals) + Lenis (smooth scroll)
+- Tailwind CSS — palette: ink `#050508`, accent `#22D3EE`, violet `#8B5CF6`
+- Fonts: Syne (display) · Space Grotesk (body) · JetBrains Mono (HUD)
+
+Performance: WebGL scene lazy-loads client-side (excluded from the 87 kB shared JS),
+`prefers-reduced-motion` respected throughout, DPR capped at 1.5.
+
+## Develop
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deploy (Vercel)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npx vercel --prod
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Then add the subdomain in Vercel → Project → Settings → Domains:
+`mahdi-tahavorgar.boppgames.com`, and create a CNAME record on boppgames.com:
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# mahdi-tahavorgar-resume
+```
+Type: CNAME  Name: mahdi-tahavorgar  Value: cname.vercel-dns.com
+```
