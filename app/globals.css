@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: #050508;
+  color: #f2f3f5;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.3);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050508;
+}
+::-webkit-scrollbar-thumb {
+  background: #1d2235;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2b3350;
+}
+
+/* chrome / silver gradient headline */
+.text-chrome {
+  background: linear-gradient(180deg, #ffffff 0%, #c8cede 55%, #6b7490 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-glow-accent {
+  text-shadow: 0 0 24px rgba(34, 211, 238, 0.45);
+}
+
+.text-outline {
+  -webkit-text-stroke: 1px rgba(242, 243, 245, 0.16);
+  color: transparent;
+}
+
+.perspective-1200 {
+  perspective: 1200px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* soft radial vignettes over the webgl scene */
+.scene-vignette {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(139, 92, 246, 0.08), transparent 60%),
+    radial-gradient(ellipse 100% 80% at 50% 100%, rgba(5, 5, 8, 0.9), transparent 70%);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #22d3ee;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
